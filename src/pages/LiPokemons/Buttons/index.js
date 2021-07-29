@@ -15,6 +15,7 @@ import ButtonFairy from "./Components/ButtonFairy";
 import ButtonRock from "./Components/ButtonRock";
 import ButtonGround from "./Components/ButtonGround";
 import ButtonSteel from "./Components/ButtonSteel";
+import ButtonTodos from "./Components/ButtonTodos";
 
 function Buttons({ buttons }) {
   return (
@@ -36,6 +37,7 @@ function Buttons({ buttons }) {
         <ButtonRock buttons={buttons} />
         <ButtonGround buttons={buttons} />
         <ButtonSteel buttons={buttons} />
+        <ButtonTodos buttons={buttons} />
       </Segment>
     </div>
   );
