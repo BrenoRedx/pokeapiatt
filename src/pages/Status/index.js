@@ -1,71 +1,8 @@
 import "./App.css";
 import { Form } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-import { useState, useEffect } from "react";
 
 function Status() {
-  const [listapokemons, setListaPokemons] = useState([]);
-  const [constantestate, setConstante] = useState(6);
-  const [ListaPokemonsFiltrados, setListaPokemonsFiltrados] = useState(null);
-
-  useEffect(() => {
-    const getpokemonurl = (id) => `https://pokeapi.co/api/v2/pokemon/${id}`;
-    const pokemonPromisesD = [];
-
-    for (let i = 1; i <= constantestate; i++) {
-      pokemonPromisesD.push(
-        fetch(getpokemonurl(i)).then((response) => response.json())
-      );
-    }
-    Promise.all(pokemonPromisesD).then((pokemon) => {
-      setListaPokemonsFiltrados(pokemon);
-    });
-  }, [constantestate]);
-
-  useEffect(() => {
-    const getpokemonurl = (id) => `https://pokeapi.co/api/v2/pokemon/${id}`;
-    const pokemonPromises = [];
-
-    for (let i = 1; i <= 150; i++) {
-      pokemonPromises.push(
-        fetch(getpokemonurl(i)).then((response) => response.json())
-      );
-    }
-    Promise.all(pokemonPromises).then((pokemon) => {
-      setListaPokemons(pokemon);
-    });
-  }, []);
-
-  const buttons = (tipo) => {
-    let pokemontypes = [];
-    if (tipo === "todos") {
-      setListaPokemonsFiltrados(listapokemons);
-    } else {
-      ListaPokemonsFiltrados.forEach((pokemon) => {
-        pokemon.types.forEach((id) => {
-          if (id.type.name === tipo) {
-            pokemontypes.push(pokemon);
-          }
-        });
-      });
-      setListaPokemonsFiltrados(pokemontypes);
-    }
-  };
-
-  const enviar = async (event) => {
-    const id = event.target.value;
-    if (id === "") {
-      setListaPokemonsFiltrados(listapokemons);
-    } else {
-      const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${id}`
-      ).then((res) => {
-        return res.json();
-      });
-      setListaPokemonsFiltrados([response]);
-    }
-  };
-
   return (
     <div>
       <div className="navbar">
@@ -79,14 +16,99 @@ function Status() {
       <div className="Pesquisa">
         <Form>
           <Form.Group>
-            <Form.Input
-              placeholder="Nome de usuário"
-              name="Pokemon"
-              onChange={enviar}
-            />
+            <Form.Input placeholder="Nome de usuário" name="Pokemon" />
             <Form.Button content="Search" />
           </Form.Group>
         </Form>
+      </div>
+      <div id="pokedex">
+        <div id="left">
+          <div id="logo"></div>
+          <div id="bg_curve1_left"></div>
+          <div id="bg_curve2_left"></div>
+          <div id="curve1_left">
+            <div id="buttonGlass">
+              <div id="reflect"> </div>
+            </div>
+            <div id="miniButtonGlass1"></div>
+            <div id="miniButtonGlass2"></div>
+            <div id="miniButtonGlass3"></div>
+          </div>
+          <div id="curve2_left">
+            <div id="junction">
+              <div id="junction1"></div>
+              <div id="junction2"></div>
+            </div>
+          </div>
+          <div id="screen">
+            <div id="topPicture">
+              <div id="buttontopPicture1"></div>
+              <div id="buttontopPicture2"></div>
+            </div>
+            <div id="picture"></div>
+            <div id="buttonbottomPicture"></div>
+            <div id="speakers">
+              <div className="sp"></div>
+              <div className="sp"></div>
+              <div className="sp"></div>
+              <div className="sp"></div>
+            </div>
+          </div>
+          <div id="bigbluebutton"></div>
+          <div id="barbutton1"></div>
+          <div id="barbutton2"></div>
+          <div id="cross">
+            <div id="leftcross">
+              <div id="leftT"></div>
+            </div>
+            <div id="topcross">
+              <div id="upT"></div>
+            </div>
+            <div id="rightcross">
+              <div id="rightT"></div>
+            </div>
+            <div id="midcross">
+              <div id="midCircle"></div>
+            </div>
+            <div id="botcross">
+              <div id="downT"></div>
+            </div>
+          </div>
+        </div>
+        <div id="right">
+          <div id="stats">
+            <strong>Name:</strong> <br />
+            <strong>Type:</strong> Water
+            <br />
+            <strong>Height:</strong> 2'072''
+            <br />
+            <strong>Weight:</strong> 43.2 lbs.
+          </div>
+          <div id="blueButtons1">
+            <div className="blueButton"></div>
+            <div className="blueButton"></div>
+            <div className="blueButton"></div>
+            <div className="blueButton"></div>
+            <div className="blueButton"></div>
+          </div>
+          <div id="blueButtons2">
+            <div className="blueButton"></div>
+            <div className="blueButton"></div>
+            <div className="blueButton"></div>
+            <div className="blueButton"></div>
+            <div className="blueButton"></div>
+          </div>
+          <div id="miniButtonGlass4"></div>
+          <div id="miniButtonGlass5"></div>
+          <div id="barbutton3"></div>
+          <div id="barbutton4"></div>
+          <div id="yellowBox1"></div>
+          <div id="yellowBox2"></div>
+          <div id="bg_curve1_right"></div>
+          <div id="bg_curve2_right"></div>
+          <div id="curve1_right"></div>
+          <div id="curve2_right"></div>
+        </div>
       </div>
     </div>
   );
