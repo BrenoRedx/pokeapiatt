@@ -5,7 +5,6 @@ import Status from "./pages/Status";
 const Routes = () => {
   return (
     <BrowserRouter>
-      <Route path="/" component={LiPokemons} />
       <Route path="/" component={Status} />
     </BrowserRouter>
   );

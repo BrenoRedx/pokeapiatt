@@ -1,10 +1,14 @@
 .navbar {
-  padding: 30px;
+  padding: 5px;
   background-color: red;
   font-size: 30px;
   font-family: "Times New Roman", Times, serif;
   text-align: center;
   color: ghostwhite;
+}
+.container-sub img {
+  width: 15%;
+  height: 5%;
 }
 .Pesquisa {
   padding: 20px;

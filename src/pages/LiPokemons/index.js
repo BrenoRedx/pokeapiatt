@@ -70,7 +70,12 @@ function LiPokemons() {
   return (
     <div>
       <div className="navbar">
-        <b>Pokedex PokeAPI</b>
+        <div className="container-sub">
+          <img
+            src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1"
+            alt="pokeapi"
+          ></img>
+        </div>
       </div>
       <div className="Pesquisa">
         <Form>
@@ -100,7 +105,7 @@ function LiPokemons() {
                   <img
                     className="card-image"
                     alt={`${pokemon.name}`}
-                    src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`}
+                    src={`${pokemon.sprites.front_default}`}
                   />
                   <h2 className="card-tittle">
                     {pokemon.id}. {pokemon.name}
