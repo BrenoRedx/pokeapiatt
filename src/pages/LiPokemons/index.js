@@ -3,10 +3,11 @@ import "./App.css";
 import { Form } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import Buttons from "./Buttons";
+import { Link } from "react-router-dom";
 
 function LiPokemons() {
   const [listapokemons, setListaPokemons] = useState([]);
-  const [constantestate, setConstante] = useState(6);
+  const [constantestate, setConstante] = useState(7);
   const [ListaPokemonsFiltrados, setListaPokemonsFiltrados] = useState(null);
 
   useEffect(() => {
@@ -90,7 +91,6 @@ function LiPokemons() {
         </Form>
       </div>
       <Buttons buttons={buttons} />
-      {console.log(ListaPokemonsFiltrados)}
       {ListaPokemonsFiltrados ? (
         <div className="container">
           <ul className="pokedex">
@@ -115,13 +115,18 @@ function LiPokemons() {
                       .map((typeInfo) => typeInfo.type.name)
                       .join(" | ")}
                   </p>
+                  <button className="ui primary button">
+                    <Link to={`/sobre/${pokemon.id}`} className="colorLink">
+                      Status
+                    </Link>
+                  </button>
                 </li>
               );
             })}
           </ul>
           <button
             className="ui primary button"
-            onClick={() => setConstante(constantestate + 6)}
+            onClick={() => setConstante(constantestate + 7)}
           >
             Carregar mais!
           </button>
@@ -150,13 +155,19 @@ function LiPokemons() {
                       .map((typeInfo) => typeInfo.type.name)
                       .join(" | ")}
                   </p>
+                  <button className="ui primary button">
+                    <Link to="/sobre" className="colorLink">
+                      Status
+                    </Link>
+                  </button>
                 </li>
               );
             })}
           </ul>
+          <br></br>
           <button
             className="ui primary button"
-            onClick={() => setConstante(constantestate + 6)}
+            onClick={() => setConstante(constantestate + 7)}
           >
             Carregar mais!
           </button>

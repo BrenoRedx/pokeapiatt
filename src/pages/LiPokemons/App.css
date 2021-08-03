@@ -172,3 +172,8 @@ h1 {
     transform: translateY(0);
   }
 }
+
+.colorLink {
+  color: white;
+  text-decoration: none;
+}

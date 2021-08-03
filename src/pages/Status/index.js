@@ -1,8 +1,27 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./App.css";
 import { Form } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function Status() {
+  const [listapokemon, setListaPokemonsFiltrados] = useState([]);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    const getpokemonurl = (id) => `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const pokemonPromisesD = [];
+    pokemonPromisesD.push(
+      fetch(getpokemonurl(id)).then((response) => response.json())
+    );
+    Promise.all(pokemonPromisesD).then((pokemon) => {
+      setListaPokemonsFiltrados(pokemon);
+    });
+  }, [id]);
+  console.log(listapokemon);
+
   return (
     <div>
       <div className="navbar">
@@ -77,12 +96,27 @@ function Status() {
         </div>
         <div id="right">
           <div id="stats">
-            <strong>Name:</strong> <br />
-            <strong>Type:</strong> Water
-            <br />
-            <strong>Height:</strong> 2'072''
-            <br />
-            <strong>Weight:</strong> 43.2 lbs.
+            {listapokemon.map((pokemon) => {
+              return (
+                <div>
+                  Name:{pokemon.name}
+                  <br />
+                  <br />
+                  Type:
+                  {pokemon.types
+                    .map((typeInfo) => typeInfo.type.name)
+                    .join(" | ")}
+                  <br />
+                  <br />
+                  Height: {pokemon.height}
+                  <br />
+                  <br />
+                  Weight: {pokemon.weight}
+                  <br />
+                  <br />
+                </div>
+              );
+            })}
           </div>
           <div id="blueButtons1">
             <div className="blueButton"></div>

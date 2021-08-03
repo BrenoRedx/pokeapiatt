@@ -19,8 +19,7 @@
   background-color: #1e1e1f;
 }
 body {
-  background: #efefbb;
-  background: linear-gradient(to left, rgb(197, 230, 236), rgb(239, 187, 230));
+  background: #ffffff;
   color: white;
   margin: 0;
   font-family: rubik;
@@ -114,6 +113,10 @@ h1 {
 
 .dragon {
   background-color: #97b3e6;
+}
+
+.ghost {
+  background-color: #d1a5cf;
 }
 
 .psychic {
@@ -814,7 +817,7 @@ h1 {
   div#bg_curve1_right {
     width: 350px;
     height: 80px;
-    background-color: #fff;
+    background-color: rgb(139, 0, 0);
 
     border-top-right-radius: 30px;
     -webkit-border-top-right-radius: 30px;
@@ -825,7 +828,7 @@ h1 {
   div#curve2_right {
     width: 216px;
     height: 100px;
-    background-color: #fff;
+    background-color: rgb(139, 0, 0);
     float: left;
 
     position: absolute;
@@ -836,6 +839,7 @@ h1 {
     -webkit-border-bottom-left-radius: 85px 60px;
     -moz-border-bottom-left-radius: 85px 60px;
     -o-border-bottom-left-radius: 85px 60px;
+    border-radius: 25px;
   }
 
   div#bg_curve2_right {
@@ -946,7 +950,6 @@ h1 {
     height: 13px;
     width: 50px;
     z-index: 1;
-
     position: absolute;
     top: 385px;
     left: 270px;
@@ -1073,7 +1076,6 @@ h1 {
     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/200653/logo.png")
       no-repeat left top;
     z-index: 1;
-
     position: absolute;
     top: 220px;
     left: 30px;
@@ -1133,10 +1135,17 @@ h1 {
 
   div#right,
   div#screen,
-  div#bigbluebutton,
-  div#barbutton1,
-  div#barbutton2,
   div#cross {
     display: none;
   }
+}
+
+div #bigbluebutton {
+  background-color: #00ff3b;
+}
+div #barbutton1 {
+  background-color: yellow;
+}
+div #barbutton2 {
+  background-color: yellow;
 }
