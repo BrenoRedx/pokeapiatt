@@ -4,6 +4,7 @@ import { Form } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Status() {
   const [listapokemon, setListaPokemonsFiltrados] = useState([]);
@@ -23,7 +24,7 @@ function Status() {
   console.log(listapokemon);
 
   return (
-    <div>
+    <div className="container-full">
       <div className="navbar">
         <div className="container-sub">
           <img
@@ -159,6 +160,13 @@ function Status() {
           <div id="curve1_right"></div>
           <div id="curve2_right"></div>
         </div>
+      </div>
+      <div className="container-route">
+        <button className="ui primary button">
+          <Link to="/" className="colorLink">
+            Lista de Pokémons
+          </Link>
+        </button>
       </div>
     </div>
   );

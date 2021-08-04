@@ -193,6 +193,7 @@ h1 {
 @media all {
   div#pokedex {
     width: 750px;
+    height: 600px;
     margin: 50px auto 0 auto;
   }
 
@@ -1155,4 +1156,16 @@ div #barbutton1 {
 }
 div #barbutton2 {
   background-color: yellow;
+}
+
+.container-full {
+  width: 100%;
+  height: 1506px;
+}
+.container-route {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }

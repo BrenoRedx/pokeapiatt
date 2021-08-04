@@ -9,7 +9,6 @@ function LiPokemons() {
   const [listapokemons, setListaPokemons] = useState([]);
   const [constantestate, setConstante] = useState(7);
   const [ListaPokemonsFiltrados, setListaPokemonsFiltrados] = useState(null);
-
   useEffect(() => {
     const getpokemonurl = (id) => `https://pokeapi.co/api/v2/pokemon/${id}`;
     const pokemonPromisesD = [];
@@ -82,7 +81,7 @@ function LiPokemons() {
         <Form>
           <Form.Group>
             <Form.Input
-              placeholder="Nome de usuário"
+              placeholder="Nome do Pokemon"
               name="Pokemon"
               onChange={enviar}
             />
