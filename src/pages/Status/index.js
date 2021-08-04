@@ -64,7 +64,23 @@ function Status() {
               <div id="buttontopPicture1"></div>
               <div id="buttontopPicture2"></div>
             </div>
-            <div id="picture"></div>
+            <div id="picture">
+              {listapokemon.map((pokemon) => {
+                return (
+                  <div
+                    className={`container-image ${
+                      pokemon.types.map((typeInfo) => typeInfo.type.name)[0]
+                    }`}
+                  >
+                    <img
+                      className="card-image"
+                      alt={`${pokemon.name}`}
+                      src={`${pokemon.sprites.front_default}`}
+                    />
+                  </div>
+                );
+              })}
+            </div>
             <div id="buttonbottomPicture"></div>
             <div id="speakers">
               <div className="sp"></div>
