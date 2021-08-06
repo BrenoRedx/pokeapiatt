@@ -872,8 +872,11 @@ h1 {
     padding: 5px;
     background-color: #167004;
     z-index: 1;
-    font-size: 15px;
-    font-family: arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    font-size: medium;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
     position: absolute;
     top: 130px;
@@ -1172,4 +1175,21 @@ div #barbutton2 {
 }
 #button-teste {
   padding: 40px;
+}
+.yellowbutton {
+  padding: 20px;
+  background-color: yellow;
+  width: 140px;
+  height: 70px;
+  border-radius: 15px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: medium;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.yellowbutton:hover {
+  background-color: rgb(226, 226, 29);
 }

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 function Status() {
   const [listapokemon, setListaPokemonsFiltrados] = useState([]);
+  const [contador, setContador] = useState(null);
 
   const { id } = useParams();
 
@@ -19,6 +20,13 @@ function Status() {
       setListaPokemonsFiltrados(pokemon);
     });
   }, [id]);
+
+  const changeshiny = () => {
+    setContador(1);
+  };
+  const changenormal = () => {
+    setContador(null);
+  };
 
   return (
     <div className="container-full">
@@ -63,11 +71,19 @@ function Status() {
                       pokemon.types.map((typeInfo) => typeInfo.type.name)[0]
                     }`}
                   >
-                    <img
-                      className="card-image"
-                      alt={`${pokemon.name}`}
-                      src={`${pokemon.sprites.front_default}`}
-                    />
+                    {contador ? (
+                      <img
+                        className="card-image"
+                        alt={`${pokemon.name}`}
+                        src={`${pokemon.sprites.front_shiny}`}
+                      />
+                    ) : (
+                      <img
+                        className="card-image"
+                        alt={`${pokemon.name}`}
+                        src={`${pokemon.sprites.front_default}`}
+                      />
+                    )}
                   </div>
                 );
               })}
@@ -106,7 +122,7 @@ function Status() {
             {listapokemon.map((pokemon) => {
               return (
                 <div>
-                  Name:{pokemon.name}
+                  Name: {pokemon.name}
                   <br />
                   <br />
                   Type:
@@ -143,8 +159,16 @@ function Status() {
           <div id="miniButtonGlass5"></div>
           <div id="barbutton3"></div>
           <div id="barbutton4"></div>
-          <div id="yellowBox1"></div>
-          <div id="yellowBox2"></div>
+          <div id="yellowBox1">
+            <button className="yellowbutton" onClick={changeshiny}>
+              Shiny Skin
+            </button>
+          </div>
+          <div id="yellowBox2">
+            <button className="yellowbutton" onClick={changenormal}>
+              Normal Skin
+            </button>
+          </div>
           <div id="bg_curve1_right"></div>
           <div id="bg_curve2_right"></div>
           <div id="curve1_right"></div>
