@@ -1,10 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import "./App.css";
-import { Form } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 function Status() {
   const [listapokemon, setListaPokemonsFiltrados] = useState([]);
@@ -21,7 +19,6 @@ function Status() {
       setListaPokemonsFiltrados(pokemon);
     });
   }, [id]);
-  console.log(listapokemon);
 
   return (
     <div className="container-full">
@@ -33,14 +30,7 @@ function Status() {
           ></img>
         </div>
       </div>
-      <div className="Pesquisa">
-        <Form>
-          <Form.Group>
-            <Form.Input placeholder="Nome de usuário" name="Pokemon" />
-            <Form.Button content="Search" />
-          </Form.Group>
-        </Form>
-      </div>
+      <div className="Pesquisa"></div>
       <div id="pokedex">
         <div id="left">
           <div id="logo"></div>
@@ -162,9 +152,19 @@ function Status() {
         </div>
       </div>
       <div className="container-route">
-        <button className="ui primary button">
+        <button className="ui primary button align">
+          <Link to={`/sobre/${Number(id) - 1}`} className="colorLink">
+            Prev
+          </Link>
+        </button>
+        <button className="ui primary button align">
           <Link to="/" className="colorLink">
             Lista de Pokémons
+          </Link>
+        </button>
+        <button className="ui primary button align">
+          <Link to={`/sobre/${Number(id) + 1}`} className="colorLink">
+            Next
           </Link>
         </button>
       </div>

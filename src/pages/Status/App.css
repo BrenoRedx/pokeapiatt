@@ -13,7 +13,7 @@
 }
 
 .Pesquisa {
-  padding: 20px;
+  padding: 40px;
   justify-content: center;
   display: flex;
   background-color: #1e1e1f;
@@ -1166,6 +1166,10 @@ div #barbutton2 {
   width: 100%;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  margin: auto;
+}
+#button-teste {
+  padding: 40px;
 }
