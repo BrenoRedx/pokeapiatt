@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-import { Form } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
-import Buttons from "./Buttons";
-import { Link } from "react-router-dom";
 
-function LiPokemons() {
+import { Link } from "react-router-dom";
+import { HeaderComponent } from "../../../components/Header/index";
+import { AdvancedSearch } from "../../../components/AdvancedSearch";
+
+function PokemonsList() {
   const [listapokemons, setListaPokemons] = useState([]);
   const [constantestate, setConstante] = useState(7);
   const [ListaPokemonsFiltrados, setListaPokemonsFiltrados] = useState(null);
@@ -68,28 +67,9 @@ function LiPokemons() {
   };
 
   return (
-    <div>
-      <div className="navbar">
-        <div className="container-sub">
-          <img
-            src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1"
-            alt="pokeapi"
-          ></img>
-        </div>
-      </div>
-      <div className="Pesquisa">
-        <Form>
-          <Form.Group>
-            <Form.Input
-              placeholder="Nome do Pokemon"
-              name="Pokemon"
-              onChange={enviar}
-            />
-            <Form.Button content="Search" />
-          </Form.Group>
-        </Form>
-      </div>
-      <Buttons buttons={buttons} />
+    <>
+      <HeaderComponent />
+      <AdvancedSearch />
       {ListaPokemonsFiltrados ? (
         <div className="container">
           <ul className="pokedex">
@@ -172,7 +152,7 @@ function LiPokemons() {
           </button>
         </div>
       )}
-    </div>
+    </>
   );
 }
-export default LiPokemons;
+export default PokemonsList;
