@@ -35,6 +35,7 @@ function PokemonsList() {
     });
   }, []);
 
+  console.log("teste");
   const buttons = (tipo) => {
     let pokemontypes = [];
     if (tipo === "todos") {
