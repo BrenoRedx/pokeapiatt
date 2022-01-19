@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { HeaderComponent } from "../../../components/Header/index";
-import { AdvancedSearch } from "../../../components/AdvancedSearch";
 
 function PokemonsList() {
   const [listapokemons, setListaPokemons] = useState([]);
@@ -69,9 +68,8 @@ function PokemonsList() {
   return (
     <>
       <HeaderComponent />
-      <AdvancedSearch />
       {ListaPokemonsFiltrados ? (
-        <div className="container">
+        <div className="container" style={{ marginTop: "4rem" }}>
           <ul className="pokedex">
             {ListaPokemonsFiltrados.map((pokemon) => {
               return (
