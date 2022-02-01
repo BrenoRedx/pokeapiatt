@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderDiv = styled.div`
-  padding: 4rem 0 4rem 1rem;
+  padding: 4rem 0 4rem 2rem;
   background-color: red;
   display: flex;
   align-items: center;
@@ -16,6 +16,7 @@ export const HeaderDiv = styled.div`
     border: 1.5rem solid black;
     background: white;
     display: absolute;
+    margin-right: 6rem;
     margin-top: 9.6rem;
   }
 `;
