@@ -5,6 +5,19 @@ export const CardList = styled.ul`
   grid-template-columns: repeat(3, auto);
   gap: 1rem;
   list-style: none;
+
+  @media (max-width: 1000px) {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 1rem;
+    list-style: none;
+  }
+  @media (max-width: 500px) {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 1rem;
+    list-style: none;
+  }
 `;
 
 export const CardTop = styled.div`
@@ -39,4 +52,43 @@ export const ContainerPoke = styled.div`
     margin-left: 3rem;
     margin-top: 2.3rem;
   }
+`;
+export const ContainerButtons = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  padding-top: 7rem;
+  margin-left: 1.3rem;
+  gap: 1;
+`;
+export const ButtonOut = styled.div`
+  width: 7rem;
+  height: 5rem;
+  background: #cda945;
+  border-radius: 0.5rem;
+`;
+
+export const ButtonCenter = styled.div`
+  width: 6rem;
+  height: 4rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  position: absolute;
+  background: white;
+  border-radius: 0.5rem;
+`;
+export const ButtonIn = styled.div`
+  width: 5rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  background: #28526a;
+  position: absolute;
+  border-radius: 0.5rem;
+`;
+export const TextButton = styled.div`
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
 `;

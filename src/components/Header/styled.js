@@ -4,10 +4,10 @@ export const HeaderDiv = styled.div`
   padding: 4rem 0 4rem 2rem;
   background-color: red;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   max-height: 6rem;
   border-bottom: 1.5rem solid black;
-  justify-content: space-between;
 
   .effects {
     width: 10rem;
@@ -16,8 +16,15 @@ export const HeaderDiv = styled.div`
     border: 1.5rem solid black;
     background: white;
     display: absolute;
-    margin-right: 6rem;
     margin-top: 9.6rem;
+  }
+
+  @media (max-width: 630px) {
+    .effects {
+    width: 0;
+    height: 0;
+    border-radius: 0;
+    border: 0;
   }
 `;
 

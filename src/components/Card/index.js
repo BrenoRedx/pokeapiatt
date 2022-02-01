@@ -1,8 +1,17 @@
-import { CardTop, CardList, CardBody, ContainerPoke } from "./styled";
-import { ButtonPokeCard } from "./components/ButtonPokeCard";
+import {
+  CardTop,
+  CardList,
+  CardBody,
+  ContainerPoke,
+  ContainerButtons,
+  ButtonOut,
+  ButtonCenter,
+  ButtonIn,
+  TextButton,
+} from "./styled";
 
 export function PokeCard({ listGetPokemons }) {
-  const listPokemons = listGetPokemons;
+  console.log(listGetPokemons);
   return (
     <CardList>
       {listGetPokemons.map((pokemon, key) => {
@@ -18,7 +27,29 @@ export function PokeCard({ listGetPokemons }) {
               </ContainerPoke>
             </CardTop>
             <CardBody>
-              <ButtonPokeCard listPokemons={listPokemons}></ButtonPokeCard>
+              <ContainerButtons>
+                <ButtonOut>
+                  <ButtonCenter>
+                    <ButtonIn>
+                      <TextButton>Name:{pokemon.name}</TextButton>
+                    </ButtonIn>
+                  </ButtonCenter>
+                </ButtonOut>
+                <ButtonOut>
+                  <ButtonCenter>
+                    <ButtonIn>
+                      <TextButton></TextButton>
+                    </ButtonIn>
+                  </ButtonCenter>
+                </ButtonOut>
+                <ButtonOut>
+                  <ButtonCenter>
+                    <ButtonIn>
+                      <TextButton></TextButton>
+                    </ButtonIn>
+                  </ButtonCenter>
+                </ButtonOut>
+              </ContainerButtons>
             </CardBody>
           </li>
         );
